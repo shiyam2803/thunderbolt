@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: maze-frontend-container
-          image: 10.10.30.22:8085/thunderbolt_frontend:v40
+          image: 10.10.30.22:3010/thunderbolt_frontend:v40
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3001
@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
         - name: maze-backend-container
-          image: 10.10.30.22:8085/thunderbolt_backend:v40
+          image: 10.10.30.22:3010/thunderbolt_backend:v40
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3001
