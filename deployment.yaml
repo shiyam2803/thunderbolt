@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: thunderbolt-frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: thunderbolt-frontend
+  template:
+    metadata:
+      labels:
+        app: thunderbolt-frontend
+    spec:
+      containers:
+        - name: maze-frontend-container
+          image: 10.10.30.22:8085/thunderbolt_frontend:v40
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3001
+          
