@@ -19,3 +19,23 @@ spec:
           ports:
             - containerPort: 3001
           
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: thunderbolt-backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: thunderbolt-backend
+  template:
+    metadata:
+      labels:
+        app: thunderbolt-backend
+    spec:
+      containers:
+        - name: maze-backend-container
+          image: 10.10.30.22:8085/thunderbolt_backend:v40
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3001
